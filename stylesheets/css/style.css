@@ -49,6 +49,8 @@ a {
     background-position: 0px 99%; }
 
 .chart-block {
+  width: 960px;
+  margin: 0 auto;
   margin-bottom: 150px; }
   .chart-block .lg-block {
     margin-bottom: 100px; }
