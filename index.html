@@ -4,41 +4,135 @@
 	<meta name="generator" content="Hugo 0.17" />
   <title>Westworld Data Visualization</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Josefin+Slab|Lato" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="stylesheets/css/style.css">
 </head>
 
 <body>
 <div class="ww-container">
+
   <div class="header">
     <div class="header-text-block text-center">
       <h1 class="header-text-main">Westworld in Data</h1>
-      <h4>An ace-high project by Mode</h4>
+      <h4 class="header-text-secondary">A <span class="mode-callout">Mode</span> Project</h4>
     </div>
-    <img src="images/header-train.png" class="train-img">
   </div>
 
   <div class="intro-text-block">
-    <h4 class="intro-text text-center">Unravel the mysteries of Westworld through data visualization</h4>
+    <h4 class="intro-text text-center">Unravel the mysteries of Westworld through data visualization. Check back each week for updates!</h4>
   </div>
 
   <div class="row chart-block">
-    <div class="col-md-6">
-      <div class="chart-container pull-right">
-        <a href="https://modeanalytics.com/modeanalytics/reports/e167cf7a6715" target="_blank">
-          <img src="" alt="Chart 1">
+  
+  
+
+    
+    <div class="col-md-6 mbxl">
+      <h4 class="chart-text sm-chart-text">The Westworld network</h4>
+      <div class="chart-container sm-chart-container pull-right">
+        <a href="https://modeanalytics.com/modeanalytics/reports/e9b393c1bb2b/embed" target="_blank">
+          <img src="images/westworld-network.png" class="chart-img" alt="Westworld Network Chart">
         </a>
       </div>
+      <p class="caption-text sm-chart-text">Who talks to whom? Click and drag a character's image to explore their relationships. The thicker the line and more forceful the pull, the stronger the connection between characters.</p>
     </div>
 
-    <div class="col-md-6">
-      <div class="chart-container">
-        <a href="https://modeanalytics.com/modeanalytics/reports/e9b393c1bb2b/embed" target="_blank">
-          <img src="" alt="Chart 2">
+    
+    <div class="col-md-6 mbxl">
+      <h4 class="chart-text">Who knows about Arnold?</h4>
+      <div class="chart-container sm-chart-container">
+        <a href="https://modeanalytics.com/modeanalytics/reports/e167cf7a6715/embed" target="_blank">
+          <img src="images/westworld-matrix.png" class="chart-img" alt="Westworld Coversation Matrix" />
         </a>
       </div>
+      <p class="caption-text">Which characters get mentioned the most (and by whom). Orange = hosts. Blue = humans. Gray = a mix of both. The darker the square, the more the character is mentioned.</p>
+    </div>
+
+    
+    <div class="col-md-6">
+      <h4 class="chart-text sm-chart-text">Which characters dominate each episode?</h4>
+      <div class="chart-container sm-chart-container pull-right">
+        <a href="https://modeanalytics.com/modeanalytics/reports/97ab9bea34cb/embed" target="_blank">
+          <img src="images/westworld-words-ep.png" class="chart-img" alt="Westworld" />
+        </a>
+      </div>
+      <p class="caption-text sm-chart-text">See when characters speak by episode.</p>
+    </div>
+
+    
+    <div class="col-md-6">
+      <h4 class="chart-text">Who speaks the most?</h4>
+      <div class="chart-container sm-chart-container">
+        <a href="https://modeanalytics.com/modeanalytics/reports/5cca8cd27693/embed" target="_blank">
+          <img src="images/westworld-words-by-character.png" class="chart-img" alt="Westworld Words by Each Character" />
+        </a>
+      </div>
+      <p class="caption-text">Word counts by character, per episode.</p>
     </div>
   </div>
+
+
+  
+  <div class="content-block">
+    <div class="content-container">
+      <h3 class="content-header">The Data</h3>
+      <p class="content-body-text">You can access this dataset of Westworld characters and their lines through the Mode Public Warehouse. <a href="https://modeanalytics.com/" target="_blank">Sign up for a free Mode account</a> to export the tables as CSVs or explore them with <a href="https://about.modeanalytics.com/online-sql-editor/" target="_blank">SQL</a> and <a href="https://about.modeanalytics.com/python/" target="_blank">Python</a> in Mode.</p>
+    </div>
+
+    <div class="content-container">
+      <h3 class="content-header">The Methodology</h3>
+      <p class="content-body-text">We obtained Westworld scripts from <a href="http://www.springfieldspringfield.co.uk/" target="_blank">Springfield! Springfield!</a> film and TV script database. <br /> We manually combed through each script to create x tables:</p>
+      <p class="content-body-text">Episodes:</p>
+      <ul class="content-body-text">
+        <li>id: The episode's unique id number.</li>
+        <li>season: The season number.</li>
+        <li>episode: The episode number.</li>
+        <li>name: The episode name.</li>
+      </ul>
+
+      <p class="content-body-text">Characters:</p>
+      <ul class="content-body-text">
+        <li>id: The character's unique id number.</li>
+        <li>name: The character's name.</li>
+        <li>sex: The sex of the character.</li>
+        <li>is_human: Boolean. Whether the character is a human or a host. This may change as we learn new information throughout the season.</li>
+        <li>is_named: Boolean. If the character has a name. For instance is_named for Dolores would equal 'true' and is_named for Guest 1 would equal 'false'.</li>
+        <li>is_major_character: If the character is part of the main cast or seems very important (e.g. Arnold or Wyatt).</li>
+      </ul>
+
+      <p class="content-body-text">Lines:</p>
+      <ul class="content-body-text">
+        <li>id: The line's unique id number.</li>
+        <li>episode_id: The episode number.</li>
+        <li>conversation_id: The conversation id number. [what was the logic for breaking up conversations?</li>
+        <li>character_id: The id of the character who is speaking.</li>
+        <li>line: A string of text. For our purposes, we defined a line as the words a character speaks without being interrupted by another character speaking. We didn't take sound effects and non-intelligible sounds into account, such as gunshots or screaming</li>
+        <li>word_count: The number of words in the character's line.</li>
+      </ul>
+
+      <p class="content-body-text">Mentions:</p>
+      <ul class="content-body-text">
+        <li>id: The mention's unique id number.</li>
+        <li>episode_id: The episode number.</li>
+        <li>conversation_id: The conversation id number.</li>
+        <li>speaking_character_id: The id of the character who is speaking.</li>
+        <li>mentioned_character_id: The id of the character who the speaking character referred to by a proper noun. For instance, Dolores saying “Daddy” would count, but “he” or “her father” wouldn't.</li>
+      </ul>
+    </div>
+
+    <div class="content-container">
+      <h3 class="content-header">Share your work</h3>
+      <p class="content-body-text">Been doing some Westworld data wrangling of your own, pardner? Send your data viz to westworld@modeanalytics.com and we might include it on the site!</p>
+    </div>
+  </div>
+
+  <div class="about-block">
+    <div class="content-container">
+      <h3 class="content-header">What is this?</h3>
+      <p class="content-body-text">We spend our Monday (and Tuesday and Wednesday) lunches talking about the latest Westworld episode. We have a #westworld Slack channel. Is it such a surprise that we decided to make this site during <a href="https://modeanalytics.com/" target="_blank">our company</a> hack day?</p>
+    </div>
+  </div>
+
 </div>
 
 </body>
