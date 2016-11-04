@@ -1,0 +1,40 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #344660; }
+
+.header {
+  height: 365px;
+  width: 100%;
+  background: url(../../images/header-dust.png) -100px 230px no-repeat, url(../../images/header-butte-right.png) 600px 56px no-repeat, url(../../images/header-butte-left.png) -140px 115px no-repeat, url(../../images/header-sun-img.png) 460px 140px no-repeat, url(../../images/header-transition.png) 0 310px no-repeat, url(../../images/header-bg.png) no-repeat;
+  /* on bottom, like z-index: 0 */ }
+  .header .train-img {
+    position: absolute;
+    right: -100px;
+    bottom: 220px; }
+  .header .header-text-block {
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 25px;
+    color: #4f5868; }
+  .header .header-text-main {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 55px; }
+
+.intro-text-block {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 100px; }
+  .intro-text-block .intro-text {
+    color: #8caec7;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #8caec7; }
+
+.chart-block {
+  margin-bottom: 50px; }
+  .chart-block .chart-container {
+    height: 300px;
+    width: 450px;
+    background-color: #f0b9a5;
+    padding: 4px;
+    border: 1px solid white; }

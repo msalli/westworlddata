@@ -1,0 +1,61 @@
+@import 'vars';
+
+body {
+ font-family: $body-font;
+ background-color: $dark-grey-blue;
+}
+
+.header {
+  height: 365px;
+  width: 100%;
+  background:
+    url(../../images/header-dust.png) -100px 230px no-repeat, /* on top */
+    url(../../images/header-butte-right.png) 600px 56px no-repeat,
+    url(../../images/header-butte-left.png) -140px 115px no-repeat,
+    url(../../images/header-sun-img.png) 460px 140px no-repeat,
+    url(../../images/header-transition.png) 0 310px no-repeat,
+    url(../../images/header-bg.png) no-repeat; /* on bottom, like z-index: 0 */
+
+  .train-img {
+    position: absolute;
+    right: -100px;
+    bottom: 220px;
+  }
+
+  .header-text-block {
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 25px;
+    color: $slate;
+  }
+
+  .header-text-main {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 55px;
+  }
+}
+
+.intro-text-block {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 100px;
+
+  .intro-text {
+    color: $light-grey-blue;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $light-grey-blue;
+  }
+}
+
+.chart-block {
+  margin-bottom: 50px;
+
+  .chart-container {
+    height: 300px;
+    width: 450px;
+    background-color: $blush-2;
+    padding: 4px;
+    border: 1px solid white;
+  }
+}
