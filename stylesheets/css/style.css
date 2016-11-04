@@ -31,7 +31,8 @@ a {
     font-size: 20px;
     font-weight: bold; }
   .header .mode-callout {
-    color: #ffffff; }
+    color: #ffffff;
+    text-decoration: none; }
 
 .intro-text-block {
   width: 950px;
